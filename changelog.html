@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="w3.css">
+		<link rel="stylesheet" href="sidenav.css">
+		<script src="sidenav.js"></script>
+		<!-- 펼침 판 스타일 시작 -->
+		<style>
+/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    transition: max-height 0.2s ease-out;
+    display: none;
+}
+		</style>
+		<!-- 펼침 판 스타일 끝 -->
+	</head>
+	<body>
+		<header class="w3-container w3-blue">
+			<h3>내 사이트</h3>
+			<h5>패치 노트</h5>
+			<button class="w3-button w3-teal" style="text-align: right;" onclick="openNav()">메뉴</button>
+			<div id="mySidenav" class="sidenav">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<a href="index.html">홈</a>
+				<a href="blog/index.html">블로그</a>
+				<a href="changelog.html">패치노트</a>
+			</div>
+
+			<!-- Use any element to open the sidenav -->
+			<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+			<div id="main">
+				
+			</div>
+		</header>
+		<div class="w3-container w3-teal">
+			<p>이 사이트를 비롯한 모든 프로그램의 버전은 각각 부여되며,(사이트는 페이지마다)이것을 모아 통합버전으로 관리합니다.<br />페이지 아래에 나오는 버전은 해당 페이지의 버전입니다.<br />여기서는 통합버전 중심으로 설명합니다.<br /><u>참고:이 페이지는 특별한 변경사항이 없는 한 아래 개별 안내에 설명하지 않습니다.</u></p>
+		</div>
+		<button class="accordion">v0.1-alpha.2</button>
+		<div class="panel">
+			<p>사이트의 여러가지 기본 기능을 추가<br />현재 이 사이트는 불안정합니다? 이해 바랍니다.<br /><br /><사이트><ol><li>사이트 footer(하단 안내)추가</li><ul><li>index.html v0.1-alpha.2</li></ul><li>개발자 블로그 추가 (+footer 포함)</li><ul><li>blog/index.html v0.1-alpha.1</li></ul><li>메인 페이지 <마지막 소식> 운영 시작 (현재 글 작성중)</li><ul><li>index.html v0.1-alpha.3</li></ul><li>사이드 메뉴에 새로운 항목 추가<br />- 블로그<br />- 패치노트</li><ul><li>index.html v0.1-alpha.4</li><li>blog/index.html v0.1-alpha.2</li><li>changelog.html v0.1-alpha.2</li></ul><li>패치노트 안내 글 변경 (추가가 먼저 들어가야 하는데...)</li><ul><li>changelog.html v0.1-alpha.3</li></ul><li>패치노트 <버전 변경 정보> 추가</li><ul><li>changelog.html v0.1-alpha.4</li></ul></ol><br />버전 변경 정보 <사이트><ul><li>index.html v0.1-alpha.1 -> ~ alpha.4</li><li>changelog.html v0.1-alpha.1 -> ~ alpha.4</li><li>blog/index.html X -> v0.1-alpha.2</li></ul></p>
+		</div>
+		<button class="accordion">v0.1-alpha.1</button>
+		<div class="panel">
+			<p>최초의 알파 버전<br />사이트를 개설하였습니다. 많이 찾아와 주세요!<br /><br /><사이트><br /><ol><li>메인 페이지 신설</li><br /><ul><li>index.html v0.1-alpha.1</li></ul><br /><li>W3.CSS 다운로드 및 사용</li><br /><ul><li>w3.css v0.1-alpha.1/자체 내부 버전 v3.0.4</li></ul><br /><li>사이드 메뉴 제작</li><br /><ul><li>sidenav.css v0.1-alpha.1</li><li>sidenav.js v0.1-alpha.1</li></ul></ol></p>
+		</div>
+		<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+        this.classList.toggle("active");
+
+        /* Toggle between hiding and showing the active panel */
+        var panel = this.nextElementSibling;
+        if (panel.style.display == "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    }
+}
+		</script>
+		<footer class="w3-container w3-blue">
+			<p>Copyright &copy; 2017 My Site. All rights reserved.<br />Powered by W3.CSS<br />v0.1-alpha.4 at 2017/11/27 Mon</p>
+		</footer>
+	</body>
+</html>
