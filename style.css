@@ -25,10 +25,19 @@ header ul li a {
 	text-decoration: none;
 	color: black;
 }
+header ul li a.current {
+	background-color: #ffc966;
+}
 header ul li a:hover {
 	background-color: #cc8500;
+}
+main {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
 }
 footer {
 	padding: 8px 16px;
 	background-color:orange;
+}#current {
 }
